@@ -9,14 +9,13 @@
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
-    <TextView
+ <ImageView
+     android:id="@+id/dice_image"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center_horizontal"
+     android:src="@drawable/dice_1"/>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30sp"
-        android:text="Hello World!"
-        android:id="@+id/result"/>
 
     <Button
         android:id="@+id/roll_button"
@@ -24,13 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/roll_label" />
-    <Button
-        android:id="@+id/count_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/count_up"
-        />
 
 
 </LinearLayout>

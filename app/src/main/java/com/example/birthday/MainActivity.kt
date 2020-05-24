@@ -3,6 +3,7 @@ package com.example.birthday
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -17,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         val rollButton : Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener{rollDice()}
 
-        val countButton : Button= findViewById(R.id.count_button)
-        countButton.setOnClickListener{ counter()}
+
 
 
     }
@@ -26,28 +26,23 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice(){
         //Toast.makeText(this,"Button clicked",Toast.LENGTH_SHORT).show()
         val randomInt= (1..6).random()
-        val resultText: TextView = findViewById(R.id.result)
-        resultText.text=randomInt.toString()
+
+        val diceImage : ImageView =findViewById(R.id.dice_image)
+
+        val drawableResource = when (randomInt) {
+            1->R.drawable.dice_1
+            2->R.drawable.dice_2
+            3->R.drawable.dice_3
+            4->R.drawable.dice_4
+            5->R.drawable.dice_5
+            else ->R.drawable.dice_6
+
+        }
+
+        diceImage.setImageResource(drawableResource)
 
     }
 
-    private fun counter(){
-            val initialText : TextView = findViewById(R.id.result)
-            val str : String = initialText.text.toString()
 
-            if(str== "Hello World!"){
-                val ans = 1
-                initialText.text=ans.toString()
-            }
-
-            else if ( str!="6"){
-                var ans= str.toInt()
-                ans+=1
-                initialText.text=ans.toString()
-
-            }
-        //Toast.makeText(this,initialText.text,Toast.LENGTH_SHORT).show()
-
-    }
 
 }
